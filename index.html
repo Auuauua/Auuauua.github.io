@@ -1,11 +1,78 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="zh">
 <head>
-  <title>My First Site</title>
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>吕奕蒙LyuYiMeng</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;700&family=Roboto+Mono:wght@300;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: "Roboto Mono", "Noto Serif SC", serif;
+      font-weight: 100;
+      background: #fff;
+      color: #000;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* 左上角名字 */
+    .name {
+      position: fixed;
+      top: 30px;
+      left: 30px;
+      font-size: 20px;
+      font-weight: 100;
+      letter-spacing: 0.02em;
+      z-index: 10;
+    }
+
+    .name span {
+      font-weight: 600;
+    }
+
+    /* 中间导航 */
+    nav {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 45px;
+    }
+
+    nav a {
+      font-family: "Roboto Mono", "Noto Serif SC", serif;
+      font-size: 20px;
+      font-weight: 100;
+      color: #000;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      text-decoration-color: #FF69B4;
+      text-underline-offset: 4px;
+    }
+  </style>
+</head>
 <body>
-  <h1>Hello</h1>
-  <p>This is my first website.</p>
-</body
+
+  <div class="name"><a href="index.html" style="text-decoration:none;color:inherit;">吕奕蒙Lyu<span>YiMeng</span></a></div>
+
+  <nav>
+    <a href="#">/作品集Portfolio</a>
+    <a href="#">/研究Research</a>
+    <a href="#">/实验Experiment</a>
+    <a href="#">/关于About</a>
+    <a href="#">/联系Contact</a>
+  </nav>
+
+</body>
+</html>
