@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>作品集Portfolio — 吕奕蒙LyuYiMeng</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Noto+Sans+SC:wght@300;400&display=swap" rel="stylesheet">
+
+<!-- 🌐 全局 style -->
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+/* ===============================
+   ❗这里只保留 layout / 页面结构
+   =============================== */
+
+body {
+  display: flex;
+  height: 100vh;
+}
+
+/* 测试 */
+/* body {
+  color: red;
+} */
+
+/* 关闭整个页面的弹性滚动 */
+html, body {
+  overscroll-behavior: none;
+}
+
+/* 关闭内部所有滚动区域的弹性 */
+.nav-scroll,
+.left-bottom,
+.right {
+  overscroll-behavior: none;
+}
+/* ===== LEFT ===== */
+.left {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== TOP LEFT ===== */
+.left-top {
+  height: 50%;
+  padding: 30px;
+  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* nav */
+.nav-scroll {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 50px;
+}
+
+.nav-scroll::-webkit-scrollbar { display: none; }
+.nav-scroll { scrollbar-width: none; }
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.nav a {
+  display: block;
+  text-align: left;
+  width: 100%;
+  font-size: 16px;
+  line-height: 2.1;
+}
+
+/* color: hsla(0, 0%, 0%, 0.90); */
+
+/* 当前选中 */
+.nav a.active {
+  align-self: flex-start;
+  padding-left: 30px; /* ⭐只让选中项缩进 */
+}
+
+/* ===== BOTTOM LEFT ===== */
+.left-bottom {
+
+  height: 50%;
+
+  padding-top: 15vh;
+
+  padding-left: 60px;
+
+  padding-right: 10vw;
+
+  padding-bottom: 15vh;
+
+  overflow-y: auto;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: flex-start;
+
+  box-sizing: border-box;  /* ⭐关键 */
+
+  text-align: left;
+
+}
+
+/* hide scrollbar */
+.left-bottom::-webkit-scrollbar { display: none; }
+.left-bottom { scrollbar-width: none; }
+
+
+#project-info {
+  width: 100%;
+  color: hsla(0, 0%, 0%, 0.6);
+}
+
+/* 点击后变纯白 */
+.left-bottom.active {
+  background: #ffffff;
+}
+
+/* ===== RIGHT ===== */
+.right {
+  width: 67%;
+  overflow-y: auto;
+}
+
+.right::-webkit-scrollbar { display: none; }
+.right { scrollbar-width: none; }
+
+.right img {
+  width: 100%;
+  display: block;
+}
+
+/* ===============================
+   📱 手机端重新排版
+   =============================== */
+    @media (max-width: 768px) and (orientation: portrait) {
+
+        body {
+            flex-direction: column;
+            height: 100vh;   /* ⭐关键：让 vh 有参照 */
+        }
+
+        /* 上半部分（左块） */
+        .left {
+            width: 100%;
+            height: 33vh;        /* ⭐核心：占屏幕1/3 */
+            display: flex;
+            flex-direction: row;
+        }
+
+        /* 左上 / 左下 平分 */
+        .left-top,
+        .left-bottom {
+            width: 50%;
+            height: 100%;
+        }
+
+        /* 去掉原来的大padding（很重要） */
+        .left-top {
+            padding: 20px;
+            padding-left: 30px;
+        }
+
+        .left-bottom {
+            padding: 20px;
+        }
+
+        /* 下半部分（图片） */
+        .right {
+            width: 100%;
+            height: 67vh;        /* ⭐剩下的空间 */
+            overflow-y: auto;
+        }
+    }
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+
+<!-- ✅ 全站统一左上角 -->
+<div class="top-left">
+  <a href="index.html" class="flip"><span>YiMeng</span></a>
+  <a href="gallery-入口.html" class="hover-tilt"> / gallery 作品</a>
+</div>
+
+
+<div class="left">
+
+  <!-- ================= 左上：项目列表 ================= -->
+  <div class="left-top">
+
+    <!-- ❌ breadcrumb 已移除（由 top-left 替代） -->
+
+    <div class="nav-scroll">
+      <div class="nav">
+
+        <a href="#" data-project="a">/ oscillation nino 尼诺现象</a> 
+        <a href="#" data-project="b">/ name 名称</a>
+        <a href="#" data-project="c">/ name 名称</a>
+        <a href="#" data-project="a">/ name 名称</a>
+        <a href="#" data-project="b">/ name 名称</a>
+        <a href="#" data-project="c">/ name 名称</a>
+        <a href="#" data-project="a">/ name 名称</a>
+        <a href="#" data-project="b">/ name 名称</a>
+        <a href="#" data-project="c">/ name 名称</a>
+        <a href="#" data-project="a">/ name 名称</a>
+        <a href="#" data-project="b">/ name 名称</a>
+        <a href="#" data-project="c">/ name 名称</a>
+        <a href="#" data-project="a">/ name 名称</a>
+        <a href="#" data-project="b">/ name 名称</a>
+        <a href="#" data-project="c">/ name 名称</a>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= 左下：描述 ================= -->
+  <div class="left-bottom">
+    <div id="project-info"></div>
+  </div>
+
+</div>
+
+<!-- ================= 右侧：图片 ================= -->
+<div class="right" id="project-images"></div>
+
+
+<!-- ================= JS（完全不动） ================= -->
+<script>
+
+/* ================= 项目A ================= */
+document.querySelector('[data-project="a"]').onclick = function(e) {
+  e.preventDefault();
+
+  document.querySelectorAll('.nav a').forEach(link => link.classList.remove('active'));
+  this.classList.add('active');
+
+  document.querySelector('.left-bottom').classList.add('active');
+
+  document.getElementById("project-info").innerHTML = `
+    <div>
+      Materials填写
+      <br>
+      描述
+      <br>
+      Everyone has the right to
+    </div>
+  `;
+
+  document.getElementById("project-images").innerHTML = `
+    <img src="Media/WorkA/WorkA4.jpg">
+    <img src="Media/WorkA/WorkA5.jpg">
+    <img src="Media/WorkA/WorkA6.jpg">
+  `;
+};
+
+/* ================= 项目B ================= */
+document.querySelector('[data-project="b"]').onclick = function(e) {
+  e.preventDefault();
+
+  document.querySelectorAll('.nav a').forEach(link => link.classList.remove('active'));
+  this.classList.add('active');
+
+  document.getElementById("project-info").innerHTML = `
+    <div>
+      Materials填写
+      <br>
+      描述
+      <br><br>
+      Everyone has the right to freedom of thought, conscience and religion; this right includes freedom to change his religion or belief, and freedom, either alone or in community with others and in public or private, to manifest his religion or belief in teaching, practice, worship and observance.
+      Everyone has the right to freedom of opinion and expression; this right includes freedom to hold opinions without interference and to seek, receive and impart information and ideas through any media and regardless of frontiers.
+      Everyone has the right to rest and leisure, including reasonable limitation of working hours and periodic holidays with pay.
+
+    </div>
+  `;
+
+  document.getElementById("project-images").innerHTML = `
+    <img src="Media/WorkA/WorkA4.jpg">
+    <img src="Media/WorkA/WorkA5.jpg">
+    <img src="Media/WorkA/WorkA6.jpg">
+  `;
+};
+
+/* ================= 项目C ================= */
+document.querySelector('[data-project="c"]').onclick = function(e) {
+  e.preventDefault();
+
+  document.querySelectorAll('.nav a').forEach(link => link.classList.remove('active'));
+  this.classList.add('active');
+
+  document.getElementById("project-info").innerHTML = `
+    <div>
+      【内容】
+    </div>
+  `;
+
+  document.getElementById("project-images").innerHTML = `
+    <img src="Media/WorkC/【图片1.jpg】">
+  `;
+};
+
+</script>
+
+</body>
+</html>

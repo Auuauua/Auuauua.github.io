@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作品集Portfolio — 吕奕蒙LyuYiMeng</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Noto+Sans+SC:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* ⭐一排布局（核心） */
+    .grid-wrap {
+      position: fixed;
+      top: 35%;
+      left: 0;              /* ⭐关键：顶左右 */
+      width: 100%;
+
+      display: flex;
+    }
+
+    /* ⭐每个正方形 */
+    .grid-item {
+      width: calc(100vw / var(--n));  /* ⭐关键 */
+      aspect-ratio: 1;
+      overflow: hidden;
+    }
+
+    /* 保留你的视觉 */
+    .grid-item:nth-child(1) { background: url('cinnamon.jpg') center/cover; transform: translate(2%, -1%) scale(1.06) rotate(1.2deg); }
+    .grid-item:nth-child(2) { background: url('cinnamon.jpg') center/cover; transform: translate(2%, 1%) scale(1.0); 
+    z-index: 10;}
+    .grid-item:nth-child(3) { background: url('cinnamon.jpg') center/cover; transform: translate(1%, 0.2%) scale(1.04) rotate(-1.1deg);}
+    .grid-item:nth-child(4) { background: url('cinnamon.jpg') center/cover; transform: translate(1%, -2%) scale(1。03) rotate(1.8deg); 
+    position: relative;
+    z-index: 10; }
+    .grid-item:nth-child(5) { background: url('cinnamon.jpg') center/cover; transform: translate(1%, 2%) scale(1) rotate(1.1deg);}
+    .grid-item:nth-child(6) { background: url('cinnamon.jpg') center/cover; transform: translate(0%, -1%) scale(1.05) rotate(-1.1deg); }
+    /* all */
+    .grid-item.full-index {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: hsla(0, 0%, 100%, 0.85);
+    }
+
+    .full-index a {
+      font-size: 14px;
+      font-weight: 100;
+      color: #bababa;
+    }
+
+    /* 手机端 */
+    @media (max-width: 768px) {
+
+      body {
+        overflow: auto;
+        height: auto;
+      }
+
+      .grid-wrap {
+        position: static;
+        width: 100%;
+        margin: 40vh 0;
+      }
+
+      .grid-item {
+        width: calc(100vw / var(--n));
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="top-left">
+    <a href="index.html" class="flip"><span>YiMeng</span></a>
+    <a href="gallery-主站.html" class="hover-tilt"> / gallery 作品</a>
+  </div>
+
+  <!-- ⭐只保留一个 grid-wrap + 放这里 -->
+  <div class="grid-wrap" style="--n: 6;">
+
+    <a class="grid-item" href="work-a.html"></a>
+    <a class="grid-item" href="work-b.html"></a>
+    <a class="grid-item" href="work-c.html"></a>
+    <a class="grid-item" href="work-d.html"></a>
+
+    <div class="grid-item full-index">
+    <a href="gallery-主站.html" class="hover-tilt">/ all 全部</a>
+    </div>
+
+    <a class="grid-item" href="work-e.html"></a>
+
+  </div>
+
+</body>
+</html>

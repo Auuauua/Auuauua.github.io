@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>吕奕蒙LyuYiMeng</title>
+
+  <!-- 字体 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Noto+Sans+SC:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- 🌐 全局样式 -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    html, body {
+      overscroll-behavior: none;
+    }
+
+    /* 🧙‍♂️ 触发区（不动） */
+    .hover-trigger {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 40vw;
+      height: 40vh;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+    }
+
+    /* ⭐ 核心修复：只动 container，不动内容 */
+    nav {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+
+      align-items: flex-start;   /* ⭐ 左对齐 */
+      justify-content: center;
+
+      gap: 15px;
+
+      /* ⭐ 用 transform 定位（不影响 hover） */
+      transform: translate(33vw, -5%);
+    }
+
+    /* ⭐ 保持你的原始排版逻辑 */
+    nav a {
+      font: inherit;
+      letter-spacing: inherit;
+
+      /* ❗不要 width，不要 block hack */
+    }
+
+    /* ⭐ 初始隐藏 */
+    nav a {
+      opacity: 0;
+    }
+
+    /* ⭐ 逐句出现 */
+    body.menu-awake nav a.show {
+      opacity: 1;
+    }
+
+    /* ⭐ 一次触发后移除触发区 */
+    body.menu-awake .hover-trigger {
+      display: none;
+    }
+
+    /* 📱 手机直接显示 */
+    @media (hover: none) {
+      nav a {
+        opacity: 1;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- 左上角（保留） -->
+  <div class="top-left">
+    <a href="index-魔法版.html" class="flip">
+      <span>YiMeng</span>
+    </a>
+  </div>
+
+  <!-- 触发区 -->
+  <div class="hover-trigger"></div>
+
+  <!-- 导航 -->
+  <nav>
+    <a href="gallery-入口.html" class="hover-tilt">/ gallery 作品</a>
+    <a href="research.html" class="hover-tilt">/ research 研究</a>
+    <a href="about.html" class="hover-tilt">/ about 关于</a>
+    <a href="contact.html" class="hover-tilt">/ contact 联系</a>
+  </nav>
+
+  <!-- ✨ JS：逐句出现 -->
+  <script>
+    const trigger = document.querySelector('.hover-trigger');
+    const items = document.querySelectorAll('nav a');
+
+    trigger.addEventListener('mouseenter', () => {
+      document.body.classList.add('menu-awake');
+
+      items.forEach((el, i) => {
+        setTimeout(() => {
+          el.classList.add('show');
+        }, i * 200);
+      });
+
+    }, { once: true });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>research</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Noto+Sans+SC:wght@300;400&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+        /* ❗只加这一点结构，不动原设计 */
+
+        .label {
+        max-width: 825px;
+        padding-right: 35px;
+        margin-left: 33vw;   /* 保持你原来的视觉位置 */
+        margin-top: 10vh;
+        margin-bottom: 50vh;
+        }
+
+
+        /* 关闭弹性滚动 */
+        html, body {
+        overscroll-behavior: none;
+        }
+
+        /* 隐藏滚动条 */
+        html::-webkit-scrollbar,
+        body::-webkit-scrollbar {
+        display: none;
+        }
+
+        html, body {
+        scrollbar-width: none;
+        }
+
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ⭐ 左上角（完全独立，不影响布局） -->
+<div class="top-left">
+  <a href="index.html" class="flip"><span>YiMeng</span></a>
+  <a href="research.html" class="hover-tilt"> / research 研究</a>
+</div>
+
+<!-- ⭐ 原内容（完全不动） -->
+<div class="label">
+
+  line 1 <br>
+  <br>
+  line 2 <br>
+  line 2 <br>
+  line 2 <br>
+  <br>
+  <p> Everyone has the right to rest and leisure, including reasonable limitation of working hours and periodic holidays with pay.
+  鉴于对人类家庭所有成员的固有尊严及其平等的和不移的权利的承认,乃是世界自由、正义与和平的基础 </p>
+
+</div>
+
+</body>
+</html>

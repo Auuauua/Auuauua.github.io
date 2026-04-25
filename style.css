@@ -1,0 +1,90 @@
+/* ===============================
+   🌐 UNIVERSAL STYLE ONLY
+   =============================== */
+
+/* ===== 颜色系统 ===== */
+:root {
+  --bg-color: hsl(0, 0%, 95%);
+  --text-color: hsla(0, 0%, 0%, 0.95);
+}
+
+/* ===== reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   🌐 TYPOGRAPHY SYSTEM
+   =============================== */
+
+body {
+  font-family: "Inter", "Noto Sans SC", sans-serif;
+  font-weight: 300;
+
+  font-size: 16px;
+  line-height: 1.5;
+
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* ❗去掉默认段落间距 */
+p {
+  margin: 0;
+}
+
+/* ===== 链接统一 ===== */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===============================
+   左上角（全站）
+   =============================== */
+
+.top-left {
+  position: fixed;
+  top: 10px;
+  left: 30px;
+
+  font-size: 16px;
+  letter-spacing: 0.02em;
+
+  z-index: 999;
+}
+
+/* YiMeng 单独 mono ⭐ */
+.top-left span {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 500;
+}
+
+/* ===============================
+   动效语言
+   =============================== */
+
+/* YiMeng flip */
+.flip span {
+  display: inline-block;
+  transform: scaleX(-1);
+  transition: transform 0s ease;
+}
+
+.flip:hover span {
+  transform: scaleX(1);
+}
+
+/* hover twist */
+.hover-tilt {
+  display: inline-block;
+  transition: transform 0s ease;
+}
+
+.hover-tilt:hover {
+  transform: rotate(-2deg) scale(1.03);
+}
+
+
